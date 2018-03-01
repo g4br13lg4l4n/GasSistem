@@ -2,11 +2,31 @@ html, body, div, p, input, textarea, h1, h2, h3, h4, h5, ul, li, a
   margin 0
   padding 0
 
+@font-face
+   font-family SourceSansPro-Bold
+   font-style Bold
+   src url(../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf)
+
+@font-face
+   font-family SourceSansPro-Regular
+   font-style Regular
+   src url(../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf)
+
+@font-face
+  font-family SourceSansPro-Light 
+  font-style Light
+  src url(../fonts/Source_Sans_Pro/SourceSansPro-Light.ttf)
+
 html
   background-color #ECEFF3
 
+li
+  list-style none
+
+a 
+  text-decoration none
+
 .container 
-  max-width 1200px
   width 100%
   margin 0 auto
 
@@ -42,4 +62,40 @@ input[type=submit]
   background-color #116DEA
 
 .red
-  background-color #F32121 
+  background-color #F32121
+
+//Contenido del Menú
+
+.nav-dropdown-items
+  max-height 0
+  transition max-height .3s ease-in-out
+  padding 5px 14px
+  margin 0
+  overflow-y hidden
+.nav-dropdown.open > .nav-dropdown-items
+  max-height 1000px
+.nav-link      
+  font-family SourceSansPro-Light
+  font-size 16px
+  color #FFFFFF
+  letter-spacing 0.4px
+  line-height 27px
+
+.container-menu 
+  background-color #53b2f8
+  width 200px
+  .head-menu
+    background-color #28A0FF
+    display flex
+    justify-content space-between
+    padding 12px
+    box-sizing border-box
+    p 
+      font-family SourceSansPro-Regular
+      font-size 18px
+      color #FFFFFF
+      letter-spacing -0.05px
+  .container-menu-nav
+    nav 
+      padding 10px
+      box-sizing border-box

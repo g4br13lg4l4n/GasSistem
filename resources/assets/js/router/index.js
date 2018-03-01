@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Login from '../view/pages/Login.vue'
 import Dashboard from '../view/components/Dashboard.vue'
+import ListUsers from '../view/components/Users/ListUsers.vue'
 
 Vue.use(Router)
 
@@ -18,13 +19,13 @@ export default new Router({
       path: '/dashboard/',
       name: 'Home',
       component: Dashboard,
-  /*    children: [
+      children: [
         {
-          path: 'dash',
-          name: 'Dash',
-          component: Dashboard
+          path: 'users',
+          name: 'List Users',
+          component: ListUsers
         },
-      ] */
+      ] 
     }    
   ]  
 });
