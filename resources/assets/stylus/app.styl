@@ -8,6 +8,12 @@ html, body, div, p, input, textarea, h1, h2, h3, h4, h5, ul, li, a
    src url(../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf)
 
 @font-face
+   font-family SourceSansPro-SemiBold
+   font-style Bold
+   src url(../fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf)
+
+
+@font-face
    font-family SourceSansPro-Regular
    font-style Regular
    src url(../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf)
@@ -17,14 +23,20 @@ html, body, div, p, input, textarea, h1, h2, h3, h4, h5, ul, li, a
   font-style Light
   src url(../fonts/Source_Sans_Pro/SourceSansPro-Light.ttf)
 
+/* Configuraciones Generales */
+
 html
   background-color #ECEFF3
+  font-family SourceSansPro-Regular
 
 li
   list-style none
 
 a 
   text-decoration none
+
+a.nav-link:hover
+  opacity .6
 
 .container 
   width 100%
@@ -64,7 +76,64 @@ input[type=submit]
 .red
   background-color #F32121
 
-//Contenido del Menú
+table
+  width 100%
+  thead
+    box-shadow 0px 1px 0px #E0E0E0
+    tr
+      th
+        color #9E9E9E
+        font-size 1em 
+        font-family SourceSansPro-Regular
+        padding 10px 0
+  tbody 
+    tr
+      td 
+        color #757575
+        font-size .9em
+        font-family SourceSansPro-Light
+        padding 10px 0
+  tfoot
+    tr 
+      td  
+        float right 
+
+th
+  text-align left 
+
+
+
+/* ********   Dashboard structure of sections    ********* */
+
+.app 
+  display flex
+  flex-wrap wrap
+  .header
+    order 1
+  .footer
+    order 3
+    display block
+    width 100%
+    position absolute
+    bottom 0
+    margin-bottom 8px
+  .app-body
+    position fixed
+    order 2
+    height 100%
+    width 100%
+    display flex
+    .container-menu
+      height 100vh
+    .main
+      background-color white
+      width calc(100vw - 200px)
+      margin-left 200px
+      margin-top 55px
+      padding 30px 40px
+
+
+/* ********   Contenido del Menú ******* */
 
 .nav-dropdown-items
   max-height 0
@@ -80,8 +149,11 @@ input[type=submit]
   color #FFFFFF
   letter-spacing 0.4px
   line-height 27px
+  width 100%
+  display block
 
 .container-menu 
+  position fixed
   background-color #53b2f8
   width 200px
   .head-menu
@@ -95,7 +167,73 @@ input[type=submit]
       font-size 18px
       color #FFFFFF
       letter-spacing -0.05px
+    .title-menu
+      font-family SourceSansPro-SemiBold
   .container-menu-nav
     nav 
-      padding 10px
-      box-sizing border-box
+      ul 
+        li  
+          padding 10px
+          padding-bottom 2px
+          box-sizing border-box
+          &:hover
+            background-color #6ec1ff
+
+
+/* ***********  Header  *********** */
+
+.header
+  width 100%
+  position fixed
+  height 55px
+  background #F7F7F7
+  box-shadow 0 2px 4px 0 rgba(0,0,0,0.17)
+  .header-container
+    margin-right 20px
+    height 100%
+    display flex
+    justify-content flex-end
+    align-items center
+    float right 
+    a, p 
+      font-family SourceSansPro-Regular
+      font-size 14px
+      color #6C6B6B
+      letter-spacing -0.04px
+    p 
+      margin-right 15px
+
+/* *******  Footer  ********* */
+
+.footer-container
+  margin-right 20px
+  height 100%
+  display flex
+  justify-content flex-end
+  align-items center
+
+/* Styles Slots (Slot-Table, Slot-Head-Main) */
+
+.header-main
+  margin-bottom 20px
+  display flex
+  justify-content space-between
+  align-items center
+  h2 
+    font-family SourceSansPro-Regular
+    font-size 20px
+    color #575757
+    letter-spacing 0
+
+.container-paginate
+  float right 
+  margin-top 20px
+  button
+    padding 10px 20px
+    background-color #2196F3
+    border 0
+    border-radius 2px
+    color white
+  span 
+    color #757575
+    margin 0 8px

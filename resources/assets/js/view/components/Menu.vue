@@ -1,13 +1,13 @@
 <template>
   <div class="container-menu">
     <div class="head-menu">
-      <router-link :to="{ name: 'Home' }" class="nav-link"> Dash Admin <i class="fal fa-bars"></i> </router-link>
+      <router-link :to="{ name: 'Home' }" class="nav-link title-menu" > DASH ADMIN <i class="fal fa-bars"></i> </router-link>
     </div>
     <div class="container-menu-nav">
       <nav>
         <ul>
 
-          <router-link tag="li" class="nav-item nav-dropdown" :to="{ path: '/dashboard'}" disabled>
+          <router-link tag="li" class="nav-item nav-dropdown" :to="{ path: '/users'}" disabled>
             <div class="nav-link nav-dropdown-toggle" @click="handleClick" id="botonaso" ><i class="fas fa-user"></i> Usuarios </div>
             <ul class="nav-dropdown-items">
               <li class="nav-item">

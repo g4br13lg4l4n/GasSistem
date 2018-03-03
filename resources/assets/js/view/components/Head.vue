@@ -1,6 +1,10 @@
 <template>
-	<div>
-		<h2> Cabecera </h2>
+	<div class="header">
+		<div class="header-container">
+			<p>Administrador</p>
+			<router-link :to="{ name: 'Login' }" class="nav-link" exact> Salir </router-link>
+		</div>
+
 	</div>
 </template>
 <script>
