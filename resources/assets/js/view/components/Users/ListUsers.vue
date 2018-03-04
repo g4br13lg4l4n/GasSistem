@@ -2,9 +2,10 @@
   <div class="container-list-users">
       <SlotHeadMain>
         <h2 slot="MainTitle"> 
-          Clientes
+          Usuarios
         </h2>
-      </SlotHeadMain>    
+      </SlotHeadMain>  
+
      <SlotTable>
        <tr slot="thead">
           <th>Nombre</th>
@@ -48,7 +49,8 @@
               <button> >  </button>
           </div>
        </div>
-     </SlotTable>   
+     </SlotTable>  
+
   </div>
 </template>
 

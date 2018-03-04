@@ -6,10 +6,6 @@
 						<tr>
 							<th>Nombre</th>
 							<th>RFC</th>
-							<th>Correo</th>
-							<th>Teléfono</th>
-							<th>Responsable</th>
-							<th>Acciones</th>
 						</tr>
 					</slot>
         </thead>

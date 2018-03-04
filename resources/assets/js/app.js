@@ -4,8 +4,12 @@ import axios from 'axios'
 import router from './router'
 import Api from './services/api'
 import Request from './services/request'
-//import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-import fontawesome from '@fortawesome/fontawesome'
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import { faCoffee } from '@fortawesome/fontawesome-free-solid'
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+
 // Importación de componentes
 import App from './view/App.vue';
 
@@ -13,7 +17,6 @@ import App from './view/App.vue';
 // Plugins
 import EventBus from './plugins/event-bus'
 Vue.use(EventBus)
-
 
 window.axios = axios
 window.Api = Api
