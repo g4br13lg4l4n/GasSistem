@@ -19,12 +19,9 @@
           <td>GGAMSEPTEMBRE201721</td>
           <td>gabriel.galan@gmail.com</td>
           <td>726361636363</td>		
-          <td>
+          <td class="cont-options">
             <button type="submit">
-              Eliminar
-            </button>
-            <button type="submit">
-              Editar
+              <font-awesome-icon :icon="['fas', 'ellipsis-v']" />
             </button>
           </td>
        </tr>
@@ -33,20 +30,21 @@
         <td>GGAMSEPTEMBRE201721</td>
         <td>gabriel.galan@gmail.com</td>
         <td>726361636363</td>		
-        <td>
+        <td class="cont-options">
           <button type="submit">
-            Eliminar
-          </button>
-          <button type="submit">
-            Editar
-          </button>
+            <font-awesome-icon :icon="['fas', 'ellipsis-v']" />
+          </button> 
         </td>
        </tr>
        <div slot="tfoot">
           <div class="container-paginate">
-              <button> <  </button>
+              <button> 
+                <font-awesome-icon :icon="['fas', 'chevron-left']" /> 
+              </button>
                 <span> 1 - 2 </span>
-              <button> >  </button>
+              <button> 
+                <font-awesome-icon :icon="['fas', 'chevron-right']" /> 
+              </button>
           </div>
        </div>
      </SlotTable>  

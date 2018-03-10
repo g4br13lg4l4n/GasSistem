@@ -1,7 +1,8 @@
 window.Vue = require('vue');
 
 import axios from 'axios'
-import router from './router'
+import routes from './router'
+import VueRouter from 'vue-router'
 import Api from './services/api'
 import Request from './services/request'
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
@@ -16,15 +17,22 @@ import App from './view/App.vue';
 
 // Plugins
 import EventBus from './plugins/event-bus'
+
 Vue.use(EventBus)
+Vue.use(VueRouter)
+
 
 window.axios = axios
 window.Api = Api
 window.Request = Request
 
+const router = new VueRouter({
+    routes,
+    mode: 'history'
+})
+
 const app = new Vue({
     el: '#app',
     router,
-    template: '<App/>',
-    components: { App },
+    render: h => h(App),
 });

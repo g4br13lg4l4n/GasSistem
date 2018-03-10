@@ -2,8 +2,8 @@
   <div class="app">
     <div class="app-body">
       <Head/>
-      <Menu/> 
-      <main class="main">
+      <Menu/>
+      <main class="main" v-bind:class="{ active: isActive }">
         <div class="container-fluid">
           <router-view></router-view>
         </div>
@@ -13,23 +13,18 @@
   </div>
 </template>
 <script>
-  import Menu from './Menu'
-  import Head from './Head'
-  import Footer from './Footer'
-
+import Menu from './Menu'
+import Head from './Head'
+import Footer from './Footer'
+import collapsibleMixin from '../mixins/collapsible'
   export default {
     name: 'Dashboard',
+    mixins: [collapsibleMixin],
     components: { Menu, Head, Footer },
-    data () {
-      return {
-        
-      }
-    },
-    methods: {
-
+    created () {
+      this.$bus.$on('active', (status) => {
+        this.isActive = status
+      })
     }
   }
 </script>
-<style lang="stylus">
-  
-</style>

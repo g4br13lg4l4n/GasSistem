@@ -63,11 +63,39 @@ a.nav-link:hover {
           flex-direction: column;
   margin: 10px 0;
 }
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.form-group .group {
+  margin: 8px 0;
+}
 label {
   font-family: SourceSansPro-Regular;
   font-size: 16px;
   color: #6c6b6b;
   margin: 4px 0;
+}
+button {
+  background: transparent;
+  border: 0;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+button.color-white {
+  color: #fff;
+}
+.cont-options {
+  text-align: center;
 }
 input[type=text],
 input[type=password],
@@ -161,6 +189,18 @@ th {
   margin-left: 200px;
   margin-top: 55px;
   padding: 30px 40px;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-name: main-inactive;
+          animation-name: main-inactive;
+}
+.app .app-body .main.active {
+  width: 100vw;
+  margin-left: 50px;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-name: main-active;
+          animation-name: main-active;
 }
 /* ********   Contenido del Menú ******* */
 .nav-dropdown-items {
@@ -175,6 +215,7 @@ th {
   max-height: 1000px;
 }
 .nav-link {
+  cursor: pointer;
   font-family: SourceSansPro-Light;
   font-size: 16px;
   color: #fff;
@@ -182,6 +223,9 @@ th {
   line-height: 27px;
   width: 100%;
   display: block;
+}
+.nav-link svg {
+  margin-right: 5px;
 }
 .container-menu {
   position: fixed;
@@ -221,6 +265,20 @@ th {
 }
 .container-menu .container-menu-nav nav ul li:hover {
   background-color: #6ec1ff;
+}
+.container-menu.active {
+  -webkit-animation-name: animation-active;
+          animation-name: animation-active;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  left: -150px;
+}
+.container-menu {
+  -webkit-animation-name: animation-inactive;
+          animation-name: animation-inactive;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  left: 0;
 }
 /* ***********  Header  *********** */
 .header {
@@ -302,4 +360,81 @@ th {
 .container-paginate span {
   color: #757575;
   margin: 0 8px;
+}
+/* fontawesome */
+.fa-angle-right {
+  float: right;
+  margin-top: 5px;
+}
+@-webkit-keyframes main-inactive {
+  0% {
+    width: 100vw;
+    margin-left: 50px;
+  }
+  100% {
+    width: calc(100vw - 200px);
+    margin-left: 200px;
+  }
+}
+@keyframes main-inactive {
+  0% {
+    width: 100vw;
+    margin-left: 50px;
+  }
+  100% {
+    width: calc(100vw - 200px);
+    margin-left: 200px;
+  }
+}
+@-webkit-keyframes main-active {
+  0% {
+    width: calc(100vw - 200px);
+    margin-left: 200px;
+  }
+  100% {
+    width: 100vw;
+    margin-left: 50px;
+  }
+}
+@keyframes main-active {
+  0% {
+    width: calc(100vw - 200px);
+    margin-left: 200px;
+  }
+  100% {
+    width: 100vw;
+    margin-left: 50px;
+  }
+}
+@-webkit-keyframes animation-active {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -150px;
+  }
+}
+@keyframes animation-active {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -150px;
+  }
+}
+@-webkit-keyframes animation-inactive {
+  0% {
+    left: -150px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes animation-inactive {
+  0% {
+    left: -150px;
+  }
+  100% {
+    left: 0;
+  }
 }

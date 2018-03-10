@@ -47,12 +47,32 @@ a.nav-link:hover
   flex-direction column
   margin 10px 0
 
+.form-group
+  display flex
+  flex-wrap wrap 
+  align-items flex-end
+  justify-content space-between
+  .group
+    margin 8px 0
+
 label
   font-family SourceSansPro-Regular
   font-size 16px
   color #6C6B6B
   margin 4px 0
-  
+
+button 
+  background transparent 
+  border 0 
+  padding 9px 12px
+  cursor pointer
+
+button.color-white
+  color white
+
+.cont-options
+  text-align center
+
 input[type=text],
 input[type=password],
 input[type=number]
@@ -131,6 +151,34 @@ th
       margin-left 200px
       margin-top 55px
       padding 30px 40px
+      animation-duration .8s
+      animation-name main-inactive
+      &.active
+        width 100vw
+        margin-left 50px
+        animation-duration .8s
+        animation-name main-active
+
+@keyframes main-inactive {
+  0% {
+    width: 100vw;
+    margin-left: 50px;
+    }
+  100% {
+    width: calc(100vw - 200px);
+    margin-left: 200px;
+    }
+}
+@keyframes main-active {
+  0% {
+    width: calc(100vw - 200px); 
+    margin-left: 200px;
+    }
+  100% {
+    width: 100vw;
+    margin-left: 50px;
+    }
+}
 
 
 /* ********   Contenido del Menú ******* */
@@ -143,7 +191,8 @@ th
   overflow-y hidden
 .nav-dropdown.open > .nav-dropdown-items
   max-height 1000px
-.nav-link      
+.nav-link  
+  cursor pointer    
   font-family SourceSansPro-Light
   font-size 16px
   color #FFFFFF
@@ -151,6 +200,8 @@ th
   line-height 27px
   width 100%
   display block
+  svg 
+    margin-right 5px
 
 .container-menu 
   position fixed
@@ -180,7 +231,25 @@ th
           box-sizing border-box
           &:hover
             background-color #6ec1ff
+  
+.container-menu.active
+  animation-name animation-active
+  animation-duration .8s
+  left -150px
 
+.container-menu
+  animation-name animation-inactive
+  animation-duration .8s
+  left 0
+
+@keyframes animation-active {
+  0%   {left: 0;}
+  100% {left: -150px;}
+}
+@keyframes animation-inactive {
+  0%   {left: -150px;}
+  100% {left: 0}
+}
 
 /* ***********  Header  *********** */
 
@@ -239,3 +308,8 @@ th
   span 
     color #757575
     margin 0 8px
+
+/* fontawesome */
+.fa-angle-right 
+  float right 
+  margin-top 5px
